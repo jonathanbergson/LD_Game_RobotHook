@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AnimationAndMovementController : MonoBehaviour
 {
+    public Animator animator;
     CharacterController characterController;
 
     // variables to store player input values
@@ -35,6 +36,7 @@ public class AnimationAndMovementController : MonoBehaviour
     void HandleGravity()
     {
         if (characterController.isGrounded) {
+            animator.SetBool("isJumping", false);
             currentMovement.y = groundedGravity;
         } else {
             currentMovement.y += gravity * Time.deltaTime;
@@ -61,6 +63,7 @@ public class AnimationAndMovementController : MonoBehaviour
     {
         Debug.Log(characterController.isGrounded);
         if (!isJumping && characterController.isGrounded && isJumpPressed) {
+            animator.SetBool("isJumping", true);
             isJumping = true;
             currentMovement.y = initialJumpVelocity;
         } else if (isJumping && characterController.isGrounded && !isJumpPressed) {
