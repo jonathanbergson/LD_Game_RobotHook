@@ -12,12 +12,17 @@ public class AnimationAndMovementController : MonoBehaviour
     float gravity = -9.8f;
     float groundedGravity = -0.05f;
 
+    // movemente variables
+    bool isRunning = false;
+    int isRunningPressed = 0;
+    float runningVelocity = 6.0f;
+
     // jump variables
+    bool isJumping = false;
     bool isJumpPressed = false;
     float initialJumpVelocity;
-    float maxJumpHeight = 2.0f;
-    float maxJumpTime = 0.5f;
-    bool isJumping = false;
+    float maxJumpHeight = 4.0f;
+    float maxJumpTime = 0.6f;
 
     void Awake()
     {
@@ -27,6 +32,7 @@ public class AnimationAndMovementController : MonoBehaviour
 
     void Update()
     {
+        OnMovement();
         OnJump();
         characterController.Move(currentMovement * Time.deltaTime);
         HandleGravity();
@@ -40,6 +46,20 @@ public class AnimationAndMovementController : MonoBehaviour
             currentMovement.y = groundedGravity;
         } else {
             currentMovement.y += gravity * Time.deltaTime;
+        }
+    }
+
+    void OnMovement()
+    {
+        if (Input.GetKey(KeyCode.A)) {
+            animator.SetBool("isRunning", true);
+            currentMovement.z = runningVelocity * -1;
+        } else if (Input.GetKey(KeyCode.D)) {
+            animator.SetBool("isRunning", true);
+            currentMovement.z = runningVelocity * 1;
+        } else {
+            animator.SetBool("isRunning", false);
+            currentMovement.z = runningVelocity * 0;
         }
     }
 
@@ -61,7 +81,6 @@ public class AnimationAndMovementController : MonoBehaviour
 
     void HandleJump()
     {
-        Debug.Log(characterController.isGrounded);
         if (!isJumping && characterController.isGrounded && isJumpPressed) {
             animator.SetBool("isJumping", true);
             isJumping = true;
