@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AnimationAndMovementController : MonoBehaviour
 {
-    public Animator animator;
+    Animator animator;
     CharacterController characterController;
 
     // variables to store player input values
@@ -26,6 +26,7 @@ public class AnimationAndMovementController : MonoBehaviour
 
     void Awake()
     {
+        animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
         SetupJumpVariables();
     }
@@ -54,9 +55,13 @@ public class AnimationAndMovementController : MonoBehaviour
         if (Input.GetKey(KeyCode.A)) {
             animator.SetBool("isRunning", true);
             currentMovement.z = runningVelocity * -1;
+            Vector3 look = Vector3.left - transform.position;
+            transform.rotation =  Quaternion.LookRotation(Vector3.back, Vector3.up);
         } else if (Input.GetKey(KeyCode.D)) {
             animator.SetBool("isRunning", true);
             currentMovement.z = runningVelocity * 1;
+            Vector3 look = Vector3.right - transform.position;
+            transform.rotation =  Quaternion.LookRotation(Vector3.forward, Vector3.up);
         } else {
             animator.SetBool("isRunning", false);
             currentMovement.z = runningVelocity * 0;
