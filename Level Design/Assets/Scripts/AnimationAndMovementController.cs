@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AnimationAndMovementController : MonoBehaviour
 {
-    Animator animator;
+    public Animator animator;
     CharacterController characterController;
 
     // variables to store player input values
@@ -26,7 +26,6 @@ public class AnimationAndMovementController : MonoBehaviour
 
     void Awake()
     {
-        animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
         SetupJumpVariables();
     }
