@@ -14,11 +14,13 @@ public class ToggleMaterial : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        mesh.material = activedMaterial;
+        if (other.name == "PlayerAreaHook")
+            mesh.material = activedMaterial;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        mesh.material = defaultMaterial;
+        if (other.name == "PlayerAreaHook")
+            mesh.material = defaultMaterial;
     }
 }
