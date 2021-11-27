@@ -387,6 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60fe2a3f005b10e4eb78862dfcff73ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpPoint: {fileID: 3444162806451881550}
   animator: {fileID: 1063039390898053231}
 --- !u!143 &1698290911
 CharacterController:
