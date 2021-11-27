@@ -86,7 +86,7 @@ public class AnimationAndMovementController : MonoBehaviour
 
     void OnUseHook()
     {
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0) && jumpPoint != null) {
             isUseHook = true;
         } else {
             isUseHook = false;
