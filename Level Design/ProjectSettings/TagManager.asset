@@ -6,6 +6,8 @@ TagManager:
   tags:
   - JumpPointer
   - TargetCollider
+  - GroundJumper
+  - Character
   layers:
   - Default
   - TransparentFX

@@ -146,4 +146,12 @@ public class AnimationAndMovementController : MonoBehaviour
             isJumping = false;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "GroundJumper")
+        {
+            currentMovement.y = 50.0f;
+        }
+    }
 }
