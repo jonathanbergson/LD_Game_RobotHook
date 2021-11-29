@@ -25,7 +25,7 @@ public class AnimationAndMovementController : MonoBehaviour
     bool isJumpPressed = false;
     float initialJumpVelocity;
     float maxJumpHeight = 4.0f;
-    float maxJumpTime = 0.6f;
+    float maxJumpTime = 0.8f;
 
     // usar gancho
     bool isUseHook = false;
