@@ -42,8 +42,11 @@ public class TargetController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "JumpPointer" && character.jumpPoint.GetInstanceID() == other.transform.GetInstanceID())
-        {
+        if (
+            other.tag == "JumpPointer" && 
+            character.jumpPoint != null && 
+            character.jumpPoint.GetInstanceID() == other.transform.GetInstanceID()
+        ) {
             character.jumpPoint = null;
         }
     }

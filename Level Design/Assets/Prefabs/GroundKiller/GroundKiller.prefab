@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3113775251055462773}
   - component: {fileID: 5257646866821702786}
   - component: {fileID: 154638737976412620}
-  - component: {fileID: 1900454920279677971}
   m_Layer: 0
   m_Name: GroundWall
   m_TagString: Untagged
@@ -82,19 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1900454920279677971
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69163442403251087}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2667159915549717665
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,6 +93,8 @@ GameObject:
   - component: {fileID: 4148342812464302878}
   - component: {fileID: 7377483458291919651}
   - component: {fileID: 6114772437392904354}
+  - component: {fileID: 2706578403434533593}
+  - component: {fileID: 4015352752031199024}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -190,6 +178,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &2706578403434533593
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2667159915549717665}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &4015352752031199024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2667159915549717665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39051a3f30ff0c544990986b295cc56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2976759711059209838
 GameObject:
   m_ObjectHideFlags: 0
